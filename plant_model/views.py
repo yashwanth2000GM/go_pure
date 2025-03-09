@@ -57,6 +57,8 @@ def predict_disease(request):
 
         except Exception as e:
             logger.error(f"❌ Error in prediction: {e}")
-            return JsonResponse({"error": "Internal Server Error "+e}, status=500)
+            # return JsonResponse({"error": "Internal Server Error "+e}, status=500)
+            return JsonResponse({"error": f"Internal Server Error: {str(e)}"}, status=500)
+
 
     return JsonResponse({"error": "Invalid request. Please upload an image."}, status=400)

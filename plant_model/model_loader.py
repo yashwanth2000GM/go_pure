@@ -4,7 +4,10 @@ import os
 from tensorflow.keras.preprocessing import image
 from PIL import Image
 
-MODEL_PATH = r"go_pure\plant_model\model\yashwanth3(200e)_plantmodel.h5"
+# MODEL_PATH = r"go_pure\plant_model\model\yashwanth3(200e)_plantmodel.h5"
+
+MODEL_PATH = os.path.join(os.path.dirname(__file__), "plant_model/model/yashwanth3(200e)_plantmodel.h5")
+
 
 try:
     model = tf.keras.models.load_model(MODEL_PATH)
